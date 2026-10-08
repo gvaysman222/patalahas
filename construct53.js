@@ -3083,7 +3083,7 @@ const baseProducts = [
     const isEmbroideryAvailable = (template = getSelectedTemplate()) => templateSupportsText(template) && getTemplateTextConfig(template)?.supportsEmbroidery !== false;
     const getEmbroideryTotal = () => {
       if (!(isEmbroideryAvailable() && state.isEmbroideryText)) return 0;
-      return 200 + Math.max(0, getEmbroiderySymbolsCount() - 15) * 15;
+      return 200 + Math.max(0, getEmbroiderySymbolsCount() - 5) * 15;
     };
     const getTotalPrice = () => getSelectedProduct().price + getSelectedDesignPrice() + getExtrasTotal() + getProductionTotal() + getEmbroideryTotal();
     const isCustomSelected = () => Boolean(state.selectedCustom);
