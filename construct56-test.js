@@ -463,7 +463,7 @@
       { id: 'custom-4', name: 'Фраза из фото', note: 'Разработка дизайнером', price: 1350, previewImage: 'https://www.dropbox.com/scl/fo/32sdavmje7anx9fg8h13a/AH_cKJkhh_G52dcEwLxF2PA/004.png?rlkey=hko8iad8atbm6bukwynhqlvps&st=k7ryeajv&raw=1', cardImage: 'https://optim.tildacdn.com/tild6164-6438-4030-a133-663935663864/-/format/webp/_04.jpg', photoDefaults: { exportX: 373.5, exportY: 481.7, width: 275.5, height: 85.6, scale: 3.131 } },
       { id: 'custom-5', name: 'Коллаж из 3-х фото', note: 'Разработка дизайнером', price: 1700, previewImage: 'https://www.dropbox.com/scl/fo/32sdavmje7anx9fg8h13a/ALmdTR-0Axc6r3oD1b9iMt8/5.%20%D0%9A%D0%BE%D0%BB%D0%BB%D0%B0%D0%B6%20%D0%B8%D0%B7%203-%D1%85%20%D1%84%D0%BE%D1%82%D0%BE.png?rlkey=hko8iad8atbm6bukwynhqlvps&st=eviyphsl&raw=1', cardImage: 'https://optim.tildacdn.com/tild6331-3830-4634-b133-316439346331/-/format/webp/_05.jpg', photoDefaults: { exportX: 373.2, exportY: 480.2, width: 262.9, height: 102.2, scale: 2.987 } },
       { id: 'custom-6', name: 'Коллаж из 4-х фото', note: 'Разработка дизайнером', price: 2100, previewImage: 'https://www.dropbox.com/scl/fo/32sdavmje7anx9fg8h13a/ADU0wBCowM9BTqActIBrbzk/006.png?rlkey=hko8iad8atbm6bukwynhqlvps&st=fk9c1ez0&raw=1', cardImage: 'https://optim.tildacdn.com/tild6463-3736-4562-b938-343634343333/-/format/webp/_06.jpg', photoDefaults: { exportX: 423.2, exportY: 480, width: 168, height: 227.2, scale: 2.058 } },
-      { id: 'custom-7', name: 'Новый дизайн', note: 'Разработка дизайнером', price: 0, previewImage: '', cardImage: '' },
+      { id: 'custom-7', name: 'Рисунок', note: 'Разработка дизайнером', price: 1500, previewImage: 'https://www.dropbox.com/scl/fi/ljr4ei8s5mz8kkq6p4kd5/07-result.png?rlkey=etmemm6aabr8ewdztw0vs4zdz&st=41woe88s&raw=1', cardImage: 'https://optim.tildacdn.com/tild6335-3038-4635-a131-383363383236/-/resize/306x/-/format/webp/_7.png', photoDefaults: { exportX: 410, exportY: 470, width: 180, height: 220 }, extraImages: [{ name: 'customExtra1', src: 'https://www.dropbox.com/scl/fi/b82czot6xamij60wahtjo/07-ishod.png?rlkey=9hc1zswi9i5bc4aa8rajn8rdl&st=98vp5hbi&raw=1', exportX: 60, exportY: 470, width: 200, height: 250 }] },
     ],
     printColors: printColorOptions.map(({ value }) => value),
     printColorLabels,
@@ -1142,6 +1142,11 @@ const baseProducts = [
           const imgY = tplDefaults?.exportY ?? spDefaults.exportY ?? 483;
           scene.elements.push({ type: 'custom-preview', name: 'customPreview', x: imgX, y: imgY, width: imgW, height: imgH, src: cpSrc });
         }
+        // Дополнительные картинки индивидуального шаблона (extraImages).
+        (params.customExtraImages || []).forEach((extra, index) => {
+          if (!extra?.src) return;
+          scene.elements.push({ type: 'custom-preview', name: extra.name || `customExtra${index + 1}`, x: extra.exportX, y: extra.exportY, width: extra.width, height: extra.height, src: extra.src });
+        });
         return scene;
       }
 
@@ -1419,7 +1424,10 @@ const baseProducts = [
 
     async function konvaBuildCustomPreview(layer, el, draggable) {
       let img;
-      try { img = await konvaLoadImage(el.src); } catch (_) { return; }
+      try {
+        const src = String(el.src || '').startsWith('data:') ? el.src : ((await fetchImageAsDataUrl(el.src)) || el.src);
+        img = await konvaLoadImage(src);
+      } catch (_) { return; }
       if (!img) return;
       const nw = img.naturalWidth || img.width, nh = img.naturalHeight || img.height;
       const fitS = Math.min(el.width / nw, el.height / nh);
@@ -1822,6 +1830,7 @@ const baseProducts = [
         isCustom: Boolean(state.selectedCustom),
         customPreviewSrc: state.selectedCustom ? (getSelectedCustomTemplate()?.previewImage || null) : null,
         customPreviewDefaults: state.selectedCustom ? (getSelectedCustomTemplate()?.photoDefaults || null) : null,
+        customExtraImages: state.selectedCustom ? (getSelectedCustomTemplate()?.extraImages || []) : [],
         hideDesign: state.step === 1,
         textExportOverrides: { exportX: textRules.exportX, exportCenterY: textRules.exportCenterY, exportCenterYWithUpload: textRules.exportCenterYWithUpload, anchor: textRules.exportAnchor },
         printSizeId: selectedPrintSize?.id || '',
@@ -5511,6 +5520,17 @@ const baseProducts = [
               preserveAspectRatio="xMidYMid meet"
             />
           `;
+          for (const extra of (customTpl.extraImages || [])) {
+            if (!extra?.src) continue;
+            const extraHref = embedAssets ? await fetchImageAsDataUrl(extra.src) : extra.src;
+            designMarkup += `
+              <image
+                href="${escapeSvg(extraHref)}"
+                x="${extra.exportX}" y="${extra.exportY}" width="${extra.width}" height="${extra.height}"
+                preserveAspectRatio="xMidYMid meet"
+              />
+            `;
+          }
         }
       } else if (selectedTemplate) {
         if ((isPhotoTextTemplate(selectedTemplate) || templatePhotoLayout) && templatePhotoLayout) {
@@ -9553,6 +9573,15 @@ function renderLeftSummary() {
               <img src="${escapeAttr(normalizeProductImageUrl(customTpl.previewImage))}" alt="preview" referrerpolicy="no-referrer" onerror="this.style.visibility='hidden'" style="object-fit:contain; object-position:center center; width:100%; height:100%; pointer-events:none; user-select:none;">
             </div>
           `;
+          (customTpl.extraImages || []).forEach((extra) => {
+            if (!extra?.src) return;
+            const extraStyle = `left:${((extra.exportX + extra.width / 2) / 1000) * 100}%; top:${(extra.exportY / 1250) * 100}%; width:${(extra.width / 1000) * 100}%; height:${(extra.height / 1250) * 100}%;`;
+            html += `
+              <div class="image-box" style="${extraStyle} border:none; border-radius:0; background:transparent;">
+                <img src="${escapeAttr(normalizeProductImageUrl(extra.src))}" alt="preview" referrerpolicy="no-referrer" onerror="this.style.visibility='hidden'" style="object-fit:contain; object-position:center center; width:100%; height:100%; pointer-events:none; user-select:none;">
+              </div>
+            `;
+          });
         }
       } else if (!hideDesign && isPhotoTextTemplate(selectedTemplate) && templatePhotoLayout) {
         const textBlockHtml = `
