@@ -457,13 +457,13 @@
       { id: 'polaroid-inside-text', name: 'Полароид + текст внутри', uploads: 1, kind: 'polaroid-inside-text', price: 900, prices: { s: 900, l: 1200 }, previewImage: 'https://optim.tildacdn.com/tild3630-3666-4466-a238-396234643732/-/format/webp/_10.jpg' },
     ],
     customTemplates: [
+      { id: 'custom-7', name: 'Рисунок', note: 'Разработка дизайнером', price: 1500, previewImage: 'https://www.dropbox.com/scl/fi/ljr4ei8s5mz8kkq6p4kd5/07-result.png?rlkey=etmemm6aabr8ewdztw0vs4zdz&st=41woe88s&raw=1', cardImage: 'https://optim.tildacdn.com/tild6335-3038-4635-a131-383363383236/-/resize/306x/-/format/webp/_7.png', photoDefaults: { exportX: 440.7, exportY: 470, width: 113.6, height: 175.3, scale: 0.797 }, extraImages: [{ name: 'customExtra1', src: 'https://www.dropbox.com/scl/fi/b82czot6xamij60wahtjo/07-ishod.png?rlkey=9hc1zswi9i5bc4aa8rajn8rdl&st=98vp5hbi&raw=1', exportX: 45.1, exportY: 152.2, width: 115.2, height: 175, scale: 0.7 }] },
       { id: 'custom-1', name: 'Парный полароид', note: 'Разработка дизайнером', price: 1300, previewImage: 'https://www.dropbox.com/scl/fo/32sdavmje7anx9fg8h13a/AJvA4PbLVJpbcO4OhhvXLUQ/%D0%BF%D0%BE%D0%BB%D0%B0%D1%80%D0%BE%D0%B8%D0%B4%20%D0%B4%D0%B2%D0%BE%D0%B9%D0%BD%D0%BE%D0%B9%20%D0%BD%D0%BE%D0%B2%D1%8B%D0%B9.png?rlkey=hko8iad8atbm6bukwynhqlvps&st=8ydu7ovl&raw=1', cardImage: 'https://optim.tildacdn.com/tild3261-3761-4434-b836-346635626363/-/format/webp/_01.jpg', photoDefaults: { exportX: 407, exportY: 481.1, width: 192.1, height: 128.8, scale: 2.183 } },
       { id: 'custom-2', name: 'Силуэт', note: 'Разработка дизайнером', price: 1550, previewImage: 'https://www.dropbox.com/scl/fo/32sdavmje7anx9fg8h13a/APT4Bvd9uJzDm2uWBDiqHmk/002.png?rlkey=hko8iad8atbm6bukwynhqlvps&st=3sdpmecg&raw=1', cardImage: 'https://optim.tildacdn.com/tild6666-3465-4236-a566-356535643237/-/resize/212x/-/format/webp/_02.jpg', photoDefaults: { exportX: 431, exportY: 479.7, width: 155.4, height: 171.2, scale: 1.766 } },
       { id: 'custom-3', name: 'Голова в колпаке + фраза', note: 'Разработка дизайнером', price: 1350, previewImage: 'https://www.dropbox.com/scl/fo/32sdavmje7anx9fg8h13a/AKzgf8MyTITN8tOBkPRvLEk/003.png?rlkey=hko8iad8atbm6bukwynhqlvps&st=1qcfqkq1&raw=1', cardImage: 'https://optim.tildacdn.com/tild3466-6164-4939-b637-336439333361/-/format/webp/_03.jpg', photoDefaults: { exportX: 427.3, exportY: 456, width: 192.3, height: 206, scale: 2.185 } },
       { id: 'custom-4', name: 'Фраза из фото', note: 'Разработка дизайнером', price: 1350, previewImage: 'https://www.dropbox.com/scl/fo/32sdavmje7anx9fg8h13a/AH_cKJkhh_G52dcEwLxF2PA/004.png?rlkey=hko8iad8atbm6bukwynhqlvps&st=k7ryeajv&raw=1', cardImage: 'https://optim.tildacdn.com/tild6164-6438-4030-a133-663935663864/-/format/webp/_04.jpg', photoDefaults: { exportX: 373.5, exportY: 481.7, width: 275.5, height: 85.6, scale: 3.131 } },
       { id: 'custom-5', name: 'Коллаж из 3-х фото', note: 'Разработка дизайнером', price: 1700, previewImage: 'https://www.dropbox.com/scl/fo/32sdavmje7anx9fg8h13a/ALmdTR-0Axc6r3oD1b9iMt8/5.%20%D0%9A%D0%BE%D0%BB%D0%BB%D0%B0%D0%B6%20%D0%B8%D0%B7%203-%D1%85%20%D1%84%D0%BE%D1%82%D0%BE.png?rlkey=hko8iad8atbm6bukwynhqlvps&st=eviyphsl&raw=1', cardImage: 'https://optim.tildacdn.com/tild6331-3830-4634-b133-316439346331/-/format/webp/_05.jpg', photoDefaults: { exportX: 373.2, exportY: 480.2, width: 262.9, height: 102.2, scale: 2.987 } },
       { id: 'custom-6', name: 'Коллаж из 4-х фото', note: 'Разработка дизайнером', price: 2100, previewImage: 'https://www.dropbox.com/scl/fo/32sdavmje7anx9fg8h13a/ADU0wBCowM9BTqActIBrbzk/006.png?rlkey=hko8iad8atbm6bukwynhqlvps&st=fk9c1ez0&raw=1', cardImage: 'https://optim.tildacdn.com/tild6463-3736-4562-b938-343634343333/-/format/webp/_06.jpg', photoDefaults: { exportX: 423.2, exportY: 480, width: 168, height: 227.2, scale: 2.058 } },
-      { id: 'custom-7', name: 'Новый дизайн', note: 'Разработка дизайнером', price: 0, previewImage: '', cardImage: '' },
     ],
     printColors: printColorOptions.map(({ value }) => value),
     printColorLabels,
@@ -747,6 +747,7 @@ const baseProducts = [
       'tee-base': [
         { name: 'Белый', image: 'https://static.tildacdn.com/tild3330-6566-4539-b631-313661313239/ti_base_white.jpg' },
         { name: 'Чёрный', image: 'https://static.tildacdn.com/tild6633-6539-4230-b461-326166363964/ti_base_black.jpg' },
+        { name: 'Сливочный', image: 'https://static.tildacdn.com/tild3336-3433-4262-b862-666535613866/_.png' },
       ],
       'longsleeve-choice': [
         { name: 'Белый', image: 'https://static.tildacdn.com/tild6663-6637-4135-a436-653564303366/long_izn_white.jpg' },
@@ -756,6 +757,7 @@ const baseProducts = [
         { name: 'Серый', image: 'https://optim.tildacdn.com/tild6661-6530-4236-b464-343566633937/-/format/webp/long_izn_gray.jpg.webp' },
         { name: 'Чёрный', image: 'https://optim.tildacdn.com/tild6461-3138-4361-b166-376438626534/-/format/webp/long_izn_black.jpg.webp' },
         { name: 'Голубой', image: 'https://static.tildacdn.com/tild6564-6534-4234-a231-633138653064/golub_long.jpg' },
+        { name: 'Сливочный', image: 'https://optim.tildacdn.com/tild3335-3133-4530-b231-373335316135/-/resize/426x/-/format/webp/_.png' },
       ],
       'hoodie-basic': [
         { name: 'Чёрный', image: 'https://static.tildacdn.com/tild3538-3730-4237-b534-376637623764/hoodie_black.jpg' },
@@ -766,6 +768,7 @@ const baseProducts = [
         { name: 'Графит', image: 'https://optim.tildacdn.com/tild6535-6239-4138-a165-356465643862/-/format/webp/sweet_graph.jpg' },
         { name: 'Розовый', image: 'https://optim.tildacdn.com/tild3732-6335-4666-b934-373131653835/-/format/webp/sweet_pink.jpg.webp' },
         { name: 'Чёрный', image: 'https://optim.tildacdn.com/tild6333-3363-4733-a230-656665663566/-/format/webp/sweet_gray.jpg.webp' },
+        { name: 'Голубой', hex: '#bfd2e2', image: 'https://optim.tildacdn.com/tild3663-6562-4962-a637-376365393732/-/format/webp/photo.png' },
       ],
     };
     const sizeChartImages = {
@@ -793,6 +796,7 @@ const baseProducts = [
       'Графитовый': '#474448',
       'Коричневый': '#7A5A43',
       'Голубой': '#caddef',
+      'Сливочный': '#fdf6df',
     };
     const seamValues = {
       'Белый': '#ffffff',
@@ -907,7 +911,7 @@ const baseProducts = [
     // =====================================================================
     // KONVA ENGINE (inlined) — declarative templates, layout, renderers
     // =====================================================================
-    const KONVA_DEV_MODE = true;
+    const KONVA_DEV_MODE = false;
 
     const KONVA_EXPORT_W = 1000;
     const KONVA_EXPORT_H = 1250;
@@ -1138,6 +1142,11 @@ const baseProducts = [
           const imgY = tplDefaults?.exportY ?? spDefaults.exportY ?? 483;
           scene.elements.push({ type: 'custom-preview', name: 'customPreview', x: imgX, y: imgY, width: imgW, height: imgH, src: cpSrc });
         }
+        // Дополнительные картинки индивидуального шаблона (extraImages).
+        (params.customExtraImages || []).forEach((extra, index) => {
+          if (!extra?.src) return;
+          scene.elements.push({ type: 'custom-preview', name: extra.name || `customExtra${index + 1}`, x: extra.exportX, y: extra.exportY, width: extra.width, height: extra.height, src: extra.src });
+        });
         return scene;
       }
 
@@ -1415,7 +1424,10 @@ const baseProducts = [
 
     async function konvaBuildCustomPreview(layer, el, draggable) {
       let img;
-      try { img = await konvaLoadImage(el.src); } catch (_) { return; }
+      try {
+        const src = String(el.src || '').startsWith('data:') ? el.src : ((await fetchImageAsDataUrl(el.src)) || el.src);
+        img = await konvaLoadImage(src);
+      } catch (_) { return; }
       if (!img) return;
       const nw = img.naturalWidth || img.width, nh = img.naturalHeight || img.height;
       const fitS = Math.min(el.width / nw, el.height / nh);
@@ -1818,6 +1830,7 @@ const baseProducts = [
         isCustom: Boolean(state.selectedCustom),
         customPreviewSrc: state.selectedCustom ? (getSelectedCustomTemplate()?.previewImage || null) : null,
         customPreviewDefaults: state.selectedCustom ? (getSelectedCustomTemplate()?.photoDefaults || null) : null,
+        customExtraImages: state.selectedCustom ? (getSelectedCustomTemplate()?.extraImages || []) : [],
         hideDesign: state.step === 1,
         textExportOverrides: { exportX: textRules.exportX, exportCenterY: textRules.exportCenterY, exportCenterYWithUpload: textRules.exportCenterYWithUpload, anchor: textRules.exportAnchor },
         printSizeId: selectedPrintSize?.id || '',
@@ -2451,7 +2464,7 @@ const baseProducts = [
     const getSelectedColor = () => {
       const colorOption = getAvailableColors(state.product).find((item) => item.name === state.color) || getAvailableColors(state.product)[0];
       if (!colorOption) return colors[0];
-      return { ...colorOption, value: getColorHex(colorOption.name) };
+      return { ...colorOption, value: colorOption.hex || getColorHex(colorOption.name) };
     };
     const syncTextColorToGarment = () => {
       const darkColors = ['Чёрный', 'Графит', 'Графитовый'];
@@ -3352,7 +3365,7 @@ const baseProducts = [
               <div class="color-row" style="margin-top:12px;">
                 ${getAvailableColors(state.product).map((c) => `
                   <button class="swatch ${state.color === c.name ? 'active' : ''}" data-color="${c.name}" title="${c.name}">
-                    <span style="background:${getColorHex(c.name)}"></span>
+                    <span style="background:${c.hex || getColorHex(c.name)}"></span>
                   </button>
                 `).join('')}
               </div>
@@ -3427,11 +3440,13 @@ const baseProducts = [
       const polaroidFrameUrl = normalizeExportImageUrl(POLAROID_FRAME_IMAGE_URL);
 
       const dedupe = (list) => Array.from(new Set(list.filter(Boolean)));
+      // templatePreviewUrls здесь НЕ грузим как <img>: превью шаблона рисуется
+      // на canvas из data-URL (через wsrv.nl, см. dataUrlSources ниже), а прямая
+      // загрузка с Dropbox занимала 20+ секунд и держала лоадер.
       const rasterUrls = dedupe([
         ...allProductVariantUrls,
         ...productCardUrls,
         ...sizeChartUrls,
-        ...templatePreviewUrls,
         ...templateCardIconUrls,
         ...extrasIconUrls,
       ]);
@@ -3443,11 +3458,32 @@ const baseProducts = [
         polaroidFrameUrl,
       ]);
 
+      // Отслеживаем недогруженные картинки, чтобы при таймауте инициализации
+      // было видно в консоли, что именно тормозит.
+      const pending = new Map();
+      const track = (kind, url, promise) => {
+        const key = `${kind}: ${url}`;
+        const startedAt = Date.now();
+        pending.set(key, startedAt);
+        return Promise.resolve(promise)
+          .catch(() => null)
+          .finally(() => {
+            pending.delete(key);
+            const ms = Date.now() - startedAt;
+            if (ms > 3000) console.warn(`[preload] ${Math.round(ms / 100) / 10} с — ${key}`);
+          });
+      };
+      window.__cckPreloadPending = pending;
+      const reportTimer = setTimeout(() => {
+        if (!pending.size) return;
+        console.warn(`[preload] не догрузились за 14 с (${pending.size}):\n` + Array.from(pending.keys()).join('\n'));
+      }, 14000);
       await Promise.all([
-        ...rasterUrls.map((url) => preloadImageUrl(url).catch(() => null)),
-        ...dataUrlSources.map((url) => fetchImageAsDataUrl(url).catch(() => null)),
-        konvaLoadImage(polaroidFrameUrl).catch(() => null),
+        ...rasterUrls.map((url) => track('img', url, preloadImageUrl(url))),
+        ...dataUrlSources.map((url) => track('canvas', url, fetchImageAsDataUrl(url))),
+        track('frame', polaroidFrameUrl, konvaLoadImage(polaroidFrameUrl)),
       ]);
+      clearTimeout(reportTimer);
     }
     function preloadCustomTemplatePreviewImages() {
       [...templates, ...customTemplates].forEach((tpl) => {
@@ -5507,6 +5543,17 @@ const baseProducts = [
               preserveAspectRatio="xMidYMid meet"
             />
           `;
+          for (const extra of (customTpl.extraImages || [])) {
+            if (!extra?.src) continue;
+            const extraHref = embedAssets ? await fetchImageAsDataUrl(extra.src) : extra.src;
+            designMarkup += `
+              <image
+                href="${escapeSvg(extraHref)}"
+                x="${extra.exportX}" y="${extra.exportY}" width="${extra.width}" height="${extra.height}"
+                preserveAspectRatio="xMidYMid meet"
+              />
+            `;
+          }
         }
       } else if (selectedTemplate) {
         if ((isPhotoTextTemplate(selectedTemplate) || templatePhotoLayout) && templatePhotoLayout) {
@@ -9549,6 +9596,15 @@ function renderLeftSummary() {
               <img src="${escapeAttr(normalizeProductImageUrl(customTpl.previewImage))}" alt="preview" referrerpolicy="no-referrer" onerror="this.style.visibility='hidden'" style="object-fit:contain; object-position:center center; width:100%; height:100%; pointer-events:none; user-select:none;">
             </div>
           `;
+          (customTpl.extraImages || []).forEach((extra) => {
+            if (!extra?.src) return;
+            const extraStyle = `left:${((extra.exportX + extra.width / 2) / 1000) * 100}%; top:${(extra.exportY / 1250) * 100}%; width:${(extra.width / 1000) * 100}%; height:${(extra.height / 1250) * 100}%;`;
+            html += `
+              <div class="image-box" style="${extraStyle} border:none; border-radius:0; background:transparent;">
+                <img src="${escapeAttr(normalizeProductImageUrl(extra.src))}" alt="preview" referrerpolicy="no-referrer" onerror="this.style.visibility='hidden'" style="object-fit:contain; object-position:center center; width:100%; height:100%; pointer-events:none; user-select:none;">
+              </div>
+            `;
+          });
         }
       } else if (!hideDesign && isPhotoTextTemplate(selectedTemplate) && templatePhotoLayout) {
         const textBlockHtml = `
@@ -10080,8 +10136,13 @@ function renderLeftSummary() {
       const total = 6;
       try {
         for (let step = 1; step <= total; step++) {
+          // pregenerateOneFlatPreview читает state синхронно, до первого await,
+          // поэтому шаг подменяем только на время вызова — иначе при таймауте
+          // инициализации конструктор открылся бы на «чужом» шаге.
           state.step = step;
-          await pregenerateOneFlatPreview(state.product, state.color, state.seam);
+          const pending = pregenerateOneFlatPreview(state.product, state.color, state.seam);
+          state.step = savedStep;
+          await pending;
           if (onProgress) {
             try { onProgress(step, total); } catch (e) {}
           }
@@ -10092,14 +10153,29 @@ function renderLeftSummary() {
       }
     }
 
+    // Ограничение по времени для этапов загрузки: если какой-то запрос
+    // (wsrv.nl, Dropbox, unpkg) повис, не держим лоадер вечно — идём дальше,
+    // недогруженное подтянется уже по ходу работы.
+    function withInitTimeout(promise, ms, label) {
+      let timer = null;
+      const timeout = new Promise((resolve) => {
+        timer = setTimeout(() => {
+          console.warn(`[init] ${label}: не дождались за ${ms} мс, продолжаем без него`);
+          try { window.__cckLog?.('configurator_init_timeout', { stage: label, ms }); } catch (_) {}
+          resolve(null);
+        }, ms);
+      });
+      return Promise.race([Promise.resolve(promise).catch(() => null), timeout]).finally(() => clearTimeout(timer));
+    }
+
     async function initializeConfigurator() {
       const initStartedAt = Date.now();
       try { window.__cckLog?.('configurator_init_start', { orderId: state.orderId, step: state.step }); } catch (_) {}
       try {
         // Load Konva library dynamically before first render
-        await loadKonvaScript();
-        await restorePersistedState();
-        await preloadInitialRenderImages();
+        await withInitTimeout(loadKonvaScript(), 10000, 'loadKonvaScript');
+        await withInitTimeout(restorePersistedState(), 5000, 'restorePersistedState');
+        await withInitTimeout(preloadInitialRenderImages(), 15000, 'preloadInitialRenderImages');
         render();
         // Подключаем слежение за корзиной СРАЗУ, а не только при оформлении: клиент
         // может открыть корзину сам (через иконку Tilda), удалить товар — и без
@@ -10115,21 +10191,21 @@ function renderLeftSummary() {
         const baseLoadingText = loadingTextEl ? loadingTextEl.textContent : '';
         // 1) Прогрев всех (изделие × цвет × шов) на текущем шаге — мгновенные
         //    переключения цвета/изделия без сетевых запросов.
-        await pregenerateAllFlatPreviews({
+        await withInitTimeout(pregenerateAllFlatPreviews({
           concurrency: 2,
           onProgress: (done, total) => {
             if (!loadingTextEl || !total) return;
             loadingTextEl.textContent = `Готовим превью ${done}/${total}`;
           },
-        });
+        }), 20000, 'pregenerateAllFlatPreviews');
         // 2) Прогрев текущего варианта для всех 6 шагов — мгновенный переход
         //    «Шаг 1 → Шаг 2 → ...» без зависания на canvas-экспорте.
-        await pregenerateCurrentVariantForAllSteps({
+        await withInitTimeout(pregenerateCurrentVariantForAllSteps({
           onProgress: (done, total) => {
             if (!loadingTextEl) return;
             loadingTextEl.textContent = `Готовим шаги ${done}/${total}`;
           },
-        });
+        }), 15000, 'pregenerateCurrentVariantForAllSteps');
         if (loadingTextEl && baseLoadingText) loadingTextEl.textContent = baseLoadingText;
       } finally {
         requestAnimationFrame(() => {
