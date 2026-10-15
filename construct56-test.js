@@ -3456,11 +3456,32 @@ const baseProducts = [
         polaroidFrameUrl,
       ]);
 
+      // Отслеживаем недогруженные картинки, чтобы при таймауте инициализации
+      // было видно в консоли, что именно тормозит.
+      const pending = new Map();
+      const track = (kind, url, promise) => {
+        const key = `${kind}: ${url}`;
+        const startedAt = Date.now();
+        pending.set(key, startedAt);
+        return Promise.resolve(promise)
+          .catch(() => null)
+          .finally(() => {
+            pending.delete(key);
+            const ms = Date.now() - startedAt;
+            if (ms > 3000) console.warn(`[preload] ${Math.round(ms / 100) / 10} с — ${key}`);
+          });
+      };
+      window.__cckPreloadPending = pending;
+      const reportTimer = setTimeout(() => {
+        if (!pending.size) return;
+        console.warn(`[preload] не догрузились за 14 с (${pending.size}):\n` + Array.from(pending.keys()).join('\n'));
+      }, 14000);
       await Promise.all([
-        ...rasterUrls.map((url) => preloadImageUrl(url).catch(() => null)),
-        ...dataUrlSources.map((url) => fetchImageAsDataUrl(url).catch(() => null)),
-        konvaLoadImage(polaroidFrameUrl).catch(() => null),
+        ...rasterUrls.map((url) => track('img', url, preloadImageUrl(url))),
+        ...dataUrlSources.map((url) => track('canvas', url, fetchImageAsDataUrl(url))),
+        track('frame', polaroidFrameUrl, konvaLoadImage(polaroidFrameUrl)),
       ]);
+      clearTimeout(reportTimer);
     }
     function preloadCustomTemplatePreviewImages() {
       [...templates, ...customTemplates].forEach((tpl) => {
