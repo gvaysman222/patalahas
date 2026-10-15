@@ -747,6 +747,7 @@ const baseProducts = [
       'tee-base': [
         { name: 'Белый', image: 'https://static.tildacdn.com/tild3330-6566-4539-b631-313661313239/ti_base_white.jpg' },
         { name: 'Чёрный', image: 'https://static.tildacdn.com/tild6633-6539-4230-b461-326166363964/ti_base_black.jpg' },
+        { name: 'Сливочный', image: 'https://static.tildacdn.com/tild3336-3433-4262-b862-666535613866/_.png' },
       ],
       'longsleeve-choice': [
         { name: 'Белый', image: 'https://static.tildacdn.com/tild6663-6637-4135-a436-653564303366/long_izn_white.jpg' },
@@ -756,6 +757,7 @@ const baseProducts = [
         { name: 'Серый', image: 'https://optim.tildacdn.com/tild6661-6530-4236-b464-343566633937/-/format/webp/long_izn_gray.jpg.webp' },
         { name: 'Чёрный', image: 'https://optim.tildacdn.com/tild6461-3138-4361-b166-376438626534/-/format/webp/long_izn_black.jpg.webp' },
         { name: 'Голубой', image: 'https://static.tildacdn.com/tild6564-6534-4234-a231-633138653064/golub_long.jpg' },
+        { name: 'Сливочный', image: 'https://optim.tildacdn.com/tild3335-3133-4530-b231-373335316135/-/resize/426x/-/format/webp/_.png' },
       ],
       'hoodie-basic': [
         { name: 'Чёрный', image: 'https://static.tildacdn.com/tild3538-3730-4237-b534-376637623764/hoodie_black.jpg' },
@@ -766,6 +768,7 @@ const baseProducts = [
         { name: 'Графит', image: 'https://optim.tildacdn.com/tild6535-6239-4138-a165-356465643862/-/format/webp/sweet_graph.jpg' },
         { name: 'Розовый', image: 'https://optim.tildacdn.com/tild3732-6335-4666-b934-373131653835/-/format/webp/sweet_pink.jpg.webp' },
         { name: 'Чёрный', image: 'https://optim.tildacdn.com/tild6333-3363-4733-a230-656665663566/-/format/webp/sweet_gray.jpg.webp' },
+        { name: 'Голубой', hex: '#bfd2e2', image: 'https://optim.tildacdn.com/tild3663-6562-4962-a637-376365393732/-/format/webp/photo.png' },
       ],
     };
     const sizeChartImages = {
@@ -793,6 +796,7 @@ const baseProducts = [
       'Графитовый': '#474448',
       'Коричневый': '#7A5A43',
       'Голубой': '#caddef',
+      'Сливочный': '#fdf6df',
     };
     const seamValues = {
       'Белый': '#ffffff',
@@ -2451,7 +2455,7 @@ const baseProducts = [
     const getSelectedColor = () => {
       const colorOption = getAvailableColors(state.product).find((item) => item.name === state.color) || getAvailableColors(state.product)[0];
       if (!colorOption) return colors[0];
-      return { ...colorOption, value: getColorHex(colorOption.name) };
+      return { ...colorOption, value: colorOption.hex || getColorHex(colorOption.name) };
     };
     const syncTextColorToGarment = () => {
       const darkColors = ['Чёрный', 'Графит', 'Графитовый'];
@@ -3352,7 +3356,7 @@ const baseProducts = [
               <div class="color-row" style="margin-top:12px;">
                 ${getAvailableColors(state.product).map((c) => `
                   <button class="swatch ${state.color === c.name ? 'active' : ''}" data-color="${c.name}" title="${c.name}">
-                    <span style="background:${getColorHex(c.name)}"></span>
+                    <span style="background:${c.hex || getColorHex(c.name)}"></span>
                   </button>
                 `).join('')}
               </div>
