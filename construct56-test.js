@@ -10113,8 +10113,13 @@ function renderLeftSummary() {
       const total = 6;
       try {
         for (let step = 1; step <= total; step++) {
+          // pregenerateOneFlatPreview читает state синхронно, до первого await,
+          // поэтому шаг подменяем только на время вызова — иначе при таймауте
+          // инициализации конструктор открылся бы на «чужом» шаге.
           state.step = step;
-          await pregenerateOneFlatPreview(state.product, state.color, state.seam);
+          const pending = pregenerateOneFlatPreview(state.product, state.color, state.seam);
+          state.step = savedStep;
+          await pending;
           if (onProgress) {
             try { onProgress(step, total); } catch (e) {}
           }
@@ -10125,14 +10130,29 @@ function renderLeftSummary() {
       }
     }
 
+    // Ограничение по времени для этапов загрузки: если какой-то запрос
+    // (wsrv.nl, Dropbox, unpkg) повис, не держим лоадер вечно — идём дальше,
+    // недогруженное подтянется уже по ходу работы.
+    function withInitTimeout(promise, ms, label) {
+      let timer = null;
+      const timeout = new Promise((resolve) => {
+        timer = setTimeout(() => {
+          console.warn(`[init] ${label}: не дождались за ${ms} мс, продолжаем без него`);
+          try { window.__cckLog?.('configurator_init_timeout', { stage: label, ms }); } catch (_) {}
+          resolve(null);
+        }, ms);
+      });
+      return Promise.race([Promise.resolve(promise).catch(() => null), timeout]).finally(() => clearTimeout(timer));
+    }
+
     async function initializeConfigurator() {
       const initStartedAt = Date.now();
       try { window.__cckLog?.('configurator_init_start', { orderId: state.orderId, step: state.step }); } catch (_) {}
       try {
         // Load Konva library dynamically before first render
-        await loadKonvaScript();
-        await restorePersistedState();
-        await preloadInitialRenderImages();
+        await withInitTimeout(loadKonvaScript(), 10000, 'loadKonvaScript');
+        await withInitTimeout(restorePersistedState(), 5000, 'restorePersistedState');
+        await withInitTimeout(preloadInitialRenderImages(), 15000, 'preloadInitialRenderImages');
         render();
         // Подключаем слежение за корзиной СРАЗУ, а не только при оформлении: клиент
         // может открыть корзину сам (через иконку Tilda), удалить товар — и без
@@ -10148,21 +10168,21 @@ function renderLeftSummary() {
         const baseLoadingText = loadingTextEl ? loadingTextEl.textContent : '';
         // 1) Прогрев всех (изделие × цвет × шов) на текущем шаге — мгновенные
         //    переключения цвета/изделия без сетевых запросов.
-        await pregenerateAllFlatPreviews({
+        await withInitTimeout(pregenerateAllFlatPreviews({
           concurrency: 2,
           onProgress: (done, total) => {
             if (!loadingTextEl || !total) return;
             loadingTextEl.textContent = `Готовим превью ${done}/${total}`;
           },
-        });
+        }), 20000, 'pregenerateAllFlatPreviews');
         // 2) Прогрев текущего варианта для всех 6 шагов — мгновенный переход
         //    «Шаг 1 → Шаг 2 → ...» без зависания на canvas-экспорте.
-        await pregenerateCurrentVariantForAllSteps({
+        await withInitTimeout(pregenerateCurrentVariantForAllSteps({
           onProgress: (done, total) => {
             if (!loadingTextEl) return;
             loadingTextEl.textContent = `Готовим шаги ${done}/${total}`;
           },
-        });
+        }), 15000, 'pregenerateCurrentVariantForAllSteps');
         if (loadingTextEl && baseLoadingText) loadingTextEl.textContent = baseLoadingText;
       } finally {
         requestAnimationFrame(() => {
