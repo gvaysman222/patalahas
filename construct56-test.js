@@ -3440,11 +3440,13 @@ const baseProducts = [
       const polaroidFrameUrl = normalizeExportImageUrl(POLAROID_FRAME_IMAGE_URL);
 
       const dedupe = (list) => Array.from(new Set(list.filter(Boolean)));
+      // templatePreviewUrls здесь НЕ грузим как <img>: превью шаблона рисуется
+      // на canvas из data-URL (через wsrv.nl, см. dataUrlSources ниже), а прямая
+      // загрузка с Dropbox занимала 20+ секунд и держала лоадер.
       const rasterUrls = dedupe([
         ...allProductVariantUrls,
         ...productCardUrls,
         ...sizeChartUrls,
-        ...templatePreviewUrls,
         ...templateCardIconUrls,
         ...extrasIconUrls,
       ]);
