@@ -757,7 +757,7 @@ const baseProducts = [
         { name: 'Серый', image: 'https://optim.tildacdn.com/tild6661-6530-4236-b464-343566633937/-/format/webp/long_izn_gray.jpg.webp' },
         { name: 'Чёрный', image: 'https://optim.tildacdn.com/tild6461-3138-4361-b166-376438626534/-/format/webp/long_izn_black.jpg.webp' },
         { name: 'Голубой', image: 'https://static.tildacdn.com/tild6564-6534-4234-a231-633138653064/golub_long.jpg' },
-        { name: 'Сливочный', image: 'https://optim.tildacdn.com/tild3335-3133-4530-b231-373335316135/-/resize/426x/-/format/webp/_.png' },
+        { name: 'Сливочный', image: 'https://static.tildacdn.com/tild3335-3133-4530-b231-373335316135/_.png' },
       ],
       'hoodie-basic': [
         { name: 'Чёрный', image: 'https://static.tildacdn.com/tild3538-3730-4237-b534-376637623764/hoodie_black.jpg' },
