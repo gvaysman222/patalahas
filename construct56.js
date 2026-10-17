@@ -713,8 +713,8 @@
 
 // ===== constructor-checkout-mvp-tilda-products.html =====
 const baseProducts = [
-      { id: 'tee-iznanka', name: 'Футболка [ИЗНАНКА]', price: 3400, priceNote: 'Швы наружу' },
-      { id: 'tee-base', name: 'Футболка [БАЗА]', price: 3400, priceNote: 'Классические швы' },
+      { id: 'tee-iznanka', name: 'Футболка [ИЗНАНКА]', price: 3400, sizePrices: { OS: 3900 }, priceNote: 'Швы наружу' },
+      { id: 'tee-base', name: 'Футболка [БАЗА]', price: 3400, sizePrices: { OS: 3900 }, priceNote: 'Классические швы' },
       { id: 'longsleeve-choice', name: 'Лонгслив [ИЗНАНКА]', price: 3900, priceNote: 'Швы наружу' },
       { id: 'hoodie-basic', name: 'Худи [БАЗА]', price: 6400 },
       { id: 'sweatshirt-iznanka', name: 'Свитшот [ИЗНАНКА]', price: 5700 },
@@ -3101,7 +3101,12 @@ const baseProducts = [
       if (!(isEmbroideryAvailable() && state.isEmbroideryText)) return 0;
       return 200 + Math.max(0, getEmbroiderySymbolsCount() - 15) * 15;
     };
-    const getTotalPrice = () => getSelectedProduct().price + getSelectedDesignPrice() + getExtrasTotal() + getProductionTotal() + getEmbroideryTotal();
+    // Цена изделия с учётом размера (например, OS у футболок дороже).
+    const getSelectedProductPrice = () => {
+      const product = getSelectedProduct();
+      return product.sizePrices?.[state.size] ?? product.price;
+    };
+    const getTotalPrice = () => getSelectedProductPrice() + getSelectedDesignPrice() + getExtrasTotal() + getProductionTotal() + getEmbroideryTotal();
     const isCustomSelected = () => Boolean(state.selectedCustom);
     let persistenceDbPromise = null;
     let persistenceSaveTimer = null;
@@ -9935,7 +9940,7 @@ function renderLeftSummary() {
     function renderLivePrice() {
       const selectedProduct = getSelectedProduct();
       const rows = [
-        rowHtml(selectedProduct.name, formatPrice(selectedProduct.price)),
+        rowHtml(selectedProduct.name, formatPrice(getSelectedProductPrice())),
         rowHtml(getSelectedDesignName(), formatPrice(getSelectedDesignPrice())),
         rowHtml('Доп. элементы', formatPrice(getExtrasTotal())),
         rowHtml('Вышивка текста', formatPrice(getEmbroideryTotal())),
