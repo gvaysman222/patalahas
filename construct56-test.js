@@ -6790,7 +6790,7 @@ const baseProducts = [
                 <button class="toggle-card production-option-card ${productionMode === 'superfast' ? 'active' : ''}" data-production-mode="superfast" type="button" aria-pressed="${productionMode === 'superfast'}">
                   <div class="production-option-main">
                     <div class="production-option-title">За 24 часа</div>
-                    <div class="subtext">Доступно при оформлении заказа до 17:00 по Москве</div>
+                    <div class="subtext">Доступно при оформлении заказа ежедневно до 17:00 по московскому времени (кроме субботы)</div>
                   </div>
                   <div class="production-card-price production-option-price">+ ${formatPrice(800)}</div>
                 </button>
