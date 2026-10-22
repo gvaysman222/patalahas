@@ -9215,6 +9215,12 @@ function renderLeftSummary() {
       return trackedPromise;
     }
 
+    // Цена на карточке изделия: «от» минимальной цены среди размеров.
+    function getProductCardPriceLabel(item) {
+      const prices = [item.price, ...Object.values(item.sizePrices || {})].filter((value) => Number.isFinite(value));
+      return `от ${formatPrice(Math.min(...prices))}`;
+    }
+
     function getStepOneMobileProductCardsHtml() {
       return baseProducts.map((item) => {
         const previewUrl = getProductCardPreviewImage(item.id);
@@ -9227,7 +9233,7 @@ function renderLeftSummary() {
             </div>
             <div class="product-choice-copy">
               <div class="product-choice-title">${item.name}</div>
-              <div class="product-choice-price">${formatPrice(item.price)}${escapedDisplayNote ? ` <span class="option-price-note">[${escapedDisplayNote}]</span>` : ''}</div>
+              <div class="product-choice-price">${getProductCardPriceLabel(item)}${escapedDisplayNote ? ` <span class="option-price-note">[${escapedDisplayNote}]</span>` : ''}</div>
             </div>
           </button>
         `;
@@ -9241,7 +9247,7 @@ function renderLeftSummary() {
         return `
           <button class="option-btn ${state.product === item.id ? 'active' : ''}" data-product="${item.id}">
             <div class="option-title">${item.name}</div>
-            <div class="option-price">${formatPrice(item.price)}${escapedDisplayNote ? ` <span class="option-price-note">[${escapedDisplayNote}]</span>` : ''}</div>
+            <div class="option-price">${getProductCardPriceLabel(item)}${escapedDisplayNote ? ` <span class="option-price-note">[${escapedDisplayNote}]</span>` : ''}</div>
           </button>
         `;
       }).join('');
