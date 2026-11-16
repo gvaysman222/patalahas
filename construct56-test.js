@@ -447,14 +447,14 @@
     templates: [
       { id: 'emb-center', name: 'Текст по центру', uploads: 0, kind: 'emb-center', price: 650, previewImage: 'https://optim.tildacdn.com/tild3639-3163-4730-a265-376630656335/-/format/webp/_1.jpg' },
       { id: 'emb-left', name: 'Текст слева', uploads: 0, kind: 'emb-left', price: 650, previewImage: 'https://optim.tildacdn.com/tild3465-3566-4166-a338-306335396234/-/format/webp/_2.jpg' },
-      { id: 'simple-photo', name: 'Просто фото', uploads: 1, kind: 'simple-photo', price: 980, prices: { s: 980, l: 1200 }, previewImage: 'https://optim.tildacdn.com/tild3364-6539-4862-a532-316231366134/-/resize/150x/-/format/webp/_3.jpg' },
+      { id: 'simple-photo', name: 'Просто фото', uploads: 1, kind: 'simple-photo', price: 980, prices: { s: 980, l: 1300 }, previewImage: 'https://optim.tildacdn.com/tild3364-6539-4862-a532-316231366134/-/resize/150x/-/format/webp/_3.jpg' },
       { id: 'photo-top-text', name: 'Фото + надпись сверху', uploads: 1, kind: 'photo-top-text', price: 1280, prices: { s: 1280, l: 1500 }, previewImage: 'https://optim.tildacdn.com/tild3330-6263-4561-b637-346231303632/-/format/webp/_4.jpg' },
       { id: 'photo-bottom-text', name: 'Фото + надпись снизу', uploads: 1, kind: 'photo-bottom-text', price: 1280, prices: { s: 1280, l: 1500 }, previewImage: 'https://optim.tildacdn.com/tild3938-3263-4830-a266-396363323735/-/format/webp/_5.jpg' },
       { id: 'photo-diagonal-text', name: 'Фото + надпись по диагонали', uploads: 1, kind: 'photo-diagonal-text', price: 1280, prices: { s: 1280, l: 1500 }, previewImage: 'https://optim.tildacdn.com/tild3833-3433-4937-a537-343831643166/-/format/webp/_6.jpg' },
-      { id: 'polaroid-photo', name: 'Полароид', uploads: 1, kind: 'polaroid-photo', price: 980, prices: { s: 980, l: 1200 }, previewImage: 'https://optim.tildacdn.com/tild6666-6336-4465-b237-366666633337/-/format/webp/_7.jpg' },
+      { id: 'polaroid-photo', name: 'Полароид', uploads: 1, kind: 'polaroid-photo', price: 980, prices: { s: 980, l: 1300 }, previewImage: 'https://optim.tildacdn.com/tild6666-6336-4465-b237-366666633337/-/format/webp/_7.jpg' },
       { id: 'polaroid-top-text', name: 'Полароид + надпись сверху', uploads: 1, kind: 'polaroid-top-text', price: 1280, prices: { s: 1280, l: 1500 }, previewImage: 'https://optim.tildacdn.com/tild3439-3632-4163-a335-396438633733/-/resize/150x/-/format/webp/_8.jpg' },
       { id: 'polaroid-diagonal-text', name: 'Полароид + надпись по диагонали', uploads: 1, kind: 'polaroid-diagonal-text', price: 1280, prices: { s: 1280, l: 1500 }, previewImage: 'https://optim.tildacdn.com/tild3235-3166-4362-a135-633036626632/-/format/webp/_9.jpg' },
-      { id: 'polaroid-inside-text', name: 'Полароид + текст внутри', uploads: 1, kind: 'polaroid-inside-text', price: 980, prices: { s: 980, l: 1200 }, previewImage: 'https://optim.tildacdn.com/tild3630-3666-4466-a238-396234643732/-/format/webp/_10.jpg' },
+      { id: 'polaroid-inside-text', name: 'Полароид + текст внутри', uploads: 1, kind: 'polaroid-inside-text', price: 980, prices: { s: 980, l: 1300 }, previewImage: 'https://optim.tildacdn.com/tild3630-3666-4466-a238-396234643732/-/format/webp/_10.jpg' },
     ],
     customTemplates: [
       { id: 'custom-7', name: 'Рисунок', note: 'Разработка дизайнером', price: 1500, previewImage: 'https://www.dropbox.com/scl/fi/ljr4ei8s5mz8kkq6p4kd5/07-result.png?rlkey=etmemm6aabr8ewdztw0vs4zdz&st=41woe88s&raw=1', cardImage: 'https://optim.tildacdn.com/tild6335-3038-4635-a131-383363383236/-/resize/306x/-/format/webp/_7.png', photoDefaults: { exportX: 445.7, exportY: 470, width: 106.6, height: 164.6, scale: 0.748 }, extraImages: [{ name: 'customExtra1', src: 'https://www.dropbox.com/scl/fi/b82czot6xamij60wahtjo/07-ishod.png?rlkey=9hc1zswi9i5bc4aa8rajn8rdl&st=98vp5hbi&raw=1', exportX: 35.6, exportY: 122.2, width: 105.9, height: 160.6, scale: 0.643 }] },
@@ -833,7 +833,7 @@ const baseProducts = [
     const printSizes = Array.isArray(defaultTemplateTextConfig.printSizes) ? defaultTemplateTextConfig.printSizes : [];
     const fonts = Array.isArray(defaultTemplateTextConfig.fonts) ? defaultTemplateTextConfig.fonts : [];
     const extras = [
-      { id: 'hand-drawn', name: 'Рисованные элементы на фотографии', description: 'К любому шаблону с фотографией вы можете добавить рисованные элементы. Макет будет выслан после работы дизайнера.', price: 300, icon: 'https://optim.tildacdn.com/tild3861-6631-4133-b232-363732663865/-/resize/200x/-/format/webp/photo.jpg' },
+      { id: 'hand-drawn', name: 'Рисованные элементы на фотографии', description: 'К любому шаблону с фотографией вы можете добавить рисованные элементы. Макет будет выслан после работы дизайнера.', price: 350, icon: 'https://optim.tildacdn.com/tild3861-6631-4133-b232-363732663865/-/resize/200x/-/format/webp/photo.jpg' },
       { id: 'polaroid-photo', name: 'Полароид', description: 'Ваши фотографии будут напечатаны на оригинальных картриджах Fujifilm', price: 390, icon: 'https://optim.tildacdn.com/tild3538-3033-4136-b039-623661366362/-/format/webp/photo.jpg' },
       { id: 'cassette', name: 'Аудио открытка «кассета»', description: 'На кассету можно записать своё 60-секундное послание, которое получатель сможет прослушать.', price: 590, icon: 'https://optim.tildacdn.com/tild6266-3536-4232-a338-306561316665/-/format/webp/photo.jpg' },
     ];
@@ -3093,7 +3093,7 @@ const baseProducts = [
     }, 0);
     const getProductionTotal = () => {
       const productionMode = getProductionMode();
-      return productionMode === 'superfast' ? 800 : productionMode === 'fast' ? 500 : 0;
+      return productionMode === 'superfast' ? 980 : productionMode === 'fast' ? 580 : 0;
     };
     const getEmbroiderySymbolsCount = () => getConfiguredTextValue().replace(/\s/g, '').length;
     const isEmbroideryAvailable = (template = getSelectedTemplate()) => templateSupportsText(template) && getTemplateTextConfig(template)?.supportsEmbroidery !== false;
@@ -6784,7 +6784,7 @@ const baseProducts = [
                     <div class="production-option-title">Ускоренный</div>
                     <div class="subtext">Срок изготовления 2-3 дня</div>
                   </div>
-                  <div class="production-card-price production-option-price">+ ${formatPrice(500)}</div>
+                  <div class="production-card-price production-option-price">+ ${formatPrice(580)}</div>
                 </button>
 
                 <button class="toggle-card production-option-card ${productionMode === 'superfast' ? 'active' : ''}" data-production-mode="superfast" type="button" aria-pressed="${productionMode === 'superfast'}">
@@ -6792,7 +6792,7 @@ const baseProducts = [
                     <div class="production-option-title">За 24 часа</div>
                     <div class="subtext">Доступно при оформлении заказа ежедневно до 17:00 по московскому времени (кроме субботы)</div>
                   </div>
-                  <div class="production-card-price production-option-price">+ ${formatPrice(800)}</div>
+                  <div class="production-card-price production-option-price">+ ${formatPrice(980)}</div>
                 </button>
               </div>
               <div class="production-comment">
