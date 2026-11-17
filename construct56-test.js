@@ -3076,7 +3076,9 @@ const baseProducts = [
       if (availableFonts.length && !availableFonts.some((fontOption) => fontOption.id === state.font)) {
         state.font = getDefaultFontName(template);
       }
-      state.textValue = filterFontTextInput(state.textValue, state.font, template);
+      if (isFontLatinOnly(state.font, template) && textContainsCyrillic(state.textValue)) {
+        state.font = availableFonts.find((fontOption) => !fontOption.latinOnly)?.id || state.font;
+      }
       if (!isEmbroideryAvailable()) {
         state.isEmbroideryText = false;
       }
@@ -4057,8 +4059,25 @@ const baseProducts = [
       const minHeight = Math.ceil(lineHeight + verticalInsets);
       const maxHeight = Math.ceil((lineHeight * Math.max(1, Number(rules.maxLines) || 1)) + verticalInsets);
 
-      textInput.style.height = 'auto';
-      textInput.style.height = `${Math.min(maxHeight, Math.max(minHeight, textInput.scrollHeight))}px`;
+      // Measure outside the layout: collapsing a focused textarea makes mobile
+      // browsers move the viewport to keep the caret visible.
+      const measure = textInput.cloneNode(false);
+      measure.removeAttribute('id');
+      measure.removeAttribute('name');
+      measure.setAttribute('aria-hidden', 'true');
+      measure.tabIndex = -1;
+      for (const property of styles) measure.style.setProperty(property, styles.getPropertyValue(property));
+      Object.assign(measure.style, {
+        position: 'fixed', top: '0', left: '0', visibility: 'hidden',
+        pointerEvents: 'none', width: `${textInput.getBoundingClientRect().width}px`,
+        height: '0', minHeight: '0', maxHeight: 'none', overflow: 'hidden',
+      });
+      measure.value = textInput.value;
+      document.body.appendChild(measure);
+      const measuredHeight = measure.scrollHeight + borderTop + borderBottom;
+      measure.remove();
+      const height = `${Math.min(maxHeight, Math.max(minHeight, measuredHeight))}px`;
+      if (textInput.style.height !== height) textInput.style.height = height;
     }
     function getPreviewTextLetterSpacingValue(template = getSelectedTemplate(), printSize = getSelectedPrintSize(undefined, template), fontSize = 16) {
       const rules = getPreviewTextRules(template, printSize);
@@ -6670,7 +6689,7 @@ const baseProducts = [
               <div class="field-title">Выберите шрифт</div>
               <div class="font-choice-grid">
                 ${availableFonts.map((fontOption) => `
-                  <button class="font-btn font-option-btn font-choice-btn ${state.font === fontOption.id ? 'active' : ''}" data-font-value="${escapeAttr(fontOption.id)}" style="font-family:${escapeAttr(getFontFamily(fontOption.id))};" type="button">
+                  <button class="font-btn font-option-btn font-choice-btn ${state.font === fontOption.id ? 'active' : ''}" data-font-value="${escapeAttr(fontOption.id)}" ${fontOption.latinOnly && textContainsCyrillic(state.textValue) ? 'disabled aria-disabled="true" title="Этот шрифт недоступен для русского текста"' : ''} style="font-family:${escapeAttr(getFontFamily(fontOption.id))};" type="button">
                     <span class="font-option-head">
                       <span class="font-option-title" style="white-space:nowrap;min-width:0;overflow:hidden;text-overflow:ellipsis;${fontOption.latinOnly ? 'font-family:system-ui,sans-serif;' : ''}">${escapeHtml(fontOption.label)}</span>
                       ${fontOption.note ? `
@@ -6683,7 +6702,7 @@ const baseProducts = [
                   </button>
                 `).join('')}
               </div>
-              <div class="font-warning" id="fontWarning" ${isFontLatinOnly(state.font) ? '' : 'hidden'}>Этот шрифт работает только с латиницей. Русские буквы не вводятся и удаляются при выборе этого шрифта.</div>
+              <div class="font-warning" id="fontWarning" ${isFontLatinOnly(state.font) ? '' : 'hidden'}>Этот шрифт работает только с латиницей. Для русского текста выберите другой шрифт.</div>
             </div>
 
             <div>
@@ -7435,11 +7454,11 @@ const baseProducts = [
         });
         container.querySelectorAll('[data-font-value]').forEach((btn) => {
           btn.onclick = async () => {
+            if (isFontLatinOnly(btn.dataset.fontValue, selectedTemplate) && textContainsCyrillic(state.textValue)) return;
             // Защита от сброса зума/позиции (см. textInput.oninput выше).
             const savedCropZoom = state.cropZoom;
             const savedCropPosition = { ...state.cropPosition };
             state.font = availableFonts.some((fontOption) => fontOption.id === btn.dataset.fontValue) ? btn.dataset.fontValue : (availableFonts[0]?.id || '');
-            state.textValue = filterFontTextInput(state.textValue, state.font, selectedTemplate);
             if (isFontLowercaseOnly(state.font, selectedTemplate) && state.textValue) {
               state.textValue = String(state.textValue).toLowerCase();
             }
@@ -9395,6 +9414,11 @@ function renderLeftSummary() {
       });
       container.querySelectorAll('[data-font-value]').forEach((btn) => {
         btn.classList.toggle('active', (availableFonts.some((fontOption) => fontOption.id === btn.dataset.fontValue) ? btn.dataset.fontValue : availableFonts[0]?.id) === state.font);
+        const blocked = isFontLatinOnly(btn.dataset.fontValue, selectedTemplate) && textContainsCyrillic(state.textValue);
+        btn.disabled = blocked;
+        btn.setAttribute('aria-disabled', String(blocked));
+        if (blocked) btn.title = 'Этот шрифт недоступен для русского текста';
+        else btn.removeAttribute('title');
       });
       container.querySelectorAll('[data-print-size]').forEach((btn) => {
         btn.classList.toggle('active', btn.dataset.printSize === state.printSize);
