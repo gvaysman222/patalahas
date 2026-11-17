@@ -6687,6 +6687,20 @@ const baseProducts = [
 
             <div>
               <div class="field-title">Выберите шрифт</div>
+              <style>
+                #stepContent .font-choice-btn:disabled {
+                  background: #f3f4f6 !important;
+                  border-color: #e5e7eb !important;
+                  color: #9ca3af !important;
+                  opacity: .55;
+                  cursor: not-allowed;
+                  box-shadow: none !important;
+                }
+                #stepContent .font-choice-btn:disabled .font-option-title,
+                #stepContent .font-choice-btn:disabled .font-option-info {
+                  color: #9ca3af !important;
+                }
+              </style>
               <div class="font-choice-grid">
                 ${availableFonts.map((fontOption) => `
                   <button class="font-btn font-option-btn font-choice-btn ${state.font === fontOption.id ? 'active' : ''}" data-font-value="${escapeAttr(fontOption.id)}" ${fontOption.latinOnly && textContainsCyrillic(state.textValue) ? 'disabled aria-disabled="true" title="Этот шрифт недоступен для русского текста"' : ''} style="font-family:${escapeAttr(getFontFamily(fontOption.id))};" type="button">
