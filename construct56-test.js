@@ -2684,6 +2684,10 @@ const baseProducts = [
     function isFontLowercaseOnly(fontId = state.font, template = getSelectedTemplate()) {
       return Boolean(getSelectedFontOption(fontId, template)?.lowercaseOnly);
     }
+    function filterFontTextInput(value, fontId = state.font, template = getSelectedTemplate()) {
+      const text = String(value || '');
+      return isFontLatinOnly(fontId, template) ? text.replace(/[\u0400-\u04FF]/g, '') : text;
+    }
     function textContainsCyrillic(value = state.textValue) {
       return /[\u0400-\u04FF]/.test(String(value || ''));
     }
@@ -3072,6 +3076,7 @@ const baseProducts = [
       if (availableFonts.length && !availableFonts.some((fontOption) => fontOption.id === state.font)) {
         state.font = getDefaultFontName(template);
       }
+      state.textValue = filterFontTextInput(state.textValue, state.font, template);
       if (!isEmbroideryAvailable()) {
         state.isEmbroideryText = false;
       }
@@ -6678,7 +6683,7 @@ const baseProducts = [
                   </button>
                 `).join('')}
               </div>
-              <div class="font-warning" id="fontWarning" ${(isFontLatinOnly(state.font) && textContainsCyrillic(state.textValue)) ? '' : 'hidden'}>Этот шрифт работает только с латиницей.</div>
+              <div class="font-warning" id="fontWarning" ${isFontLatinOnly(state.font) ? '' : 'hidden'}>Этот шрифт работает только с латиницей. Русские буквы не вводятся и удаляются при выборе этого шрифта.</div>
             </div>
 
             <div>
@@ -7251,6 +7256,9 @@ const baseProducts = [
             const previousValue = String(state.textValue || '');
             const lowercaseOnly = isFontLowercaseOnly(state.font, template);
             let rawValue = isSimplePhotoTemplate(template) ? '' : String(e.target.value);
+            const originalCursorPos = e.target.selectionStart;
+            const filteredCursorPos = filterFontTextInput(rawValue.slice(0, originalCursorPos), state.font, template).length;
+            rawValue = filterFontTextInput(rawValue, state.font, template);
             if (lowercaseOnly) rawValue = rawValue.toLowerCase();
             const newLines = rawValue.replace(/\r\n?/g, '\n').split('\n');
             const lineExceeded = newLines.some((line) => line.length > maxChars);
@@ -7263,7 +7271,7 @@ const baseProducts = [
               return;
             }
             if (e.target.value !== rawValue) {
-              const cursorPos = e.target.selectionStart;
+              const cursorPos = filteredCursorPos;
               e.target.value = rawValue;
               e.target.setSelectionRange(cursorPos, cursorPos);
             }
@@ -7431,6 +7439,7 @@ const baseProducts = [
             const savedCropZoom = state.cropZoom;
             const savedCropPosition = { ...state.cropPosition };
             state.font = availableFonts.some((fontOption) => fontOption.id === btn.dataset.fontValue) ? btn.dataset.fontValue : (availableFonts[0]?.id || '');
+            state.textValue = filterFontTextInput(state.textValue, state.font, selectedTemplate);
             if (isFontLowercaseOnly(state.font, selectedTemplate) && state.textValue) {
               state.textValue = String(state.textValue).toLowerCase();
             }
@@ -9400,7 +9409,7 @@ function renderLeftSummary() {
 
       const fontWarning = container.querySelector('#fontWarning');
       if (fontWarning) {
-        const shouldWarn = isFontLatinOnly(state.font, selectedTemplate) && textContainsCyrillic(state.textValue);
+        const shouldWarn = isFontLatinOnly(state.font, selectedTemplate);
         fontWarning.hidden = !shouldWarn;
       }
       const fontMeta = container.querySelector('#fontMeta');
