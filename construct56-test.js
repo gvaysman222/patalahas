@@ -6672,7 +6672,7 @@ const baseProducts = [
                 ${availableFonts.map((fontOption) => `
                   <button class="font-btn font-option-btn font-choice-btn ${state.font === fontOption.id ? 'active' : ''}" data-font-value="${escapeAttr(fontOption.id)}" style="font-family:${escapeAttr(getFontFamily(fontOption.id))};" type="button">
                     <span class="font-option-head">
-                      <span class="font-option-title">${fontOption.label}</span>
+                      <span class="font-option-title" style="white-space:nowrap;min-width:0;overflow:hidden;text-overflow:ellipsis;">${escapeHtml(fontOption.latinOnly ? fontOption.label.replace(/^Шрифт\s*/, 'Font ') : fontOption.label)}</span>
                       ${fontOption.note ? `
                         <span class="font-option-info" data-font-note-trigger title="${escapeAttr(fontOption.note)}" aria-label="${escapeAttr(fontOption.note)}">
                           ?
