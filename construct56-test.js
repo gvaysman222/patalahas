@@ -6702,7 +6702,7 @@ const baseProducts = [
                   </button>
                 `).join('')}
               </div>
-              <div class="font-warning" id="fontWarning" ${isFontLatinOnly(state.font) ? '' : 'hidden'}>Этот шрифт работает только с латиницей. Для русского текста выберите другой шрифт.</div>
+              <div class="font-warning" id="fontWarning" ${isFontLatinOnly(state.font) ? '' : 'hidden'}>Этот шрифт работает только с латиницей.</div>
             </div>
 
             <div>
