@@ -447,23 +447,24 @@
     templates: [
       { id: 'emb-center', name: 'Текст по центру', uploads: 0, kind: 'emb-center', price: 650, previewImage: 'https://optim.tildacdn.com/tild3639-3163-4730-a265-376630656335/-/format/webp/_1.jpg' },
       { id: 'emb-left', name: 'Текст слева', uploads: 0, kind: 'emb-left', price: 650, previewImage: 'https://optim.tildacdn.com/tild3465-3566-4166-a338-306335396234/-/format/webp/_2.jpg' },
-      { id: 'simple-photo', name: 'Просто фото', uploads: 1, kind: 'simple-photo', price: 900, prices: { s: 900, l: 1200 }, previewImage: 'https://optim.tildacdn.com/tild3364-6539-4862-a532-316231366134/-/resize/150x/-/format/webp/_3.jpg' },
-      { id: 'photo-top-text', name: 'Фото + надпись сверху', uploads: 1, kind: 'photo-top-text', price: 1200, prices: { s: 1200, l: 1500 }, previewImage: 'https://optim.tildacdn.com/tild3330-6263-4561-b637-346231303632/-/format/webp/_4.jpg' },
-      { id: 'photo-bottom-text', name: 'Фото + надпись снизу', uploads: 1, kind: 'photo-bottom-text', price: 1200, prices: { s: 1200, l: 1500 }, previewImage: 'https://optim.tildacdn.com/tild3938-3263-4830-a266-396363323735/-/format/webp/_5.jpg' },
-      { id: 'photo-diagonal-text', name: 'Фото + надпись по диагонали', uploads: 1, kind: 'photo-diagonal-text', price: 1200, prices: { s: 1200, l: 1500 }, previewImage: 'https://optim.tildacdn.com/tild3833-3433-4937-a537-343831643166/-/format/webp/_6.jpg' },
-      { id: 'polaroid-photo', name: 'Полароид', uploads: 1, kind: 'polaroid-photo', price: 900, prices: { s: 900, l: 1200 }, previewImage: 'https://optim.tildacdn.com/tild6666-6336-4465-b237-366666633337/-/format/webp/_7.jpg' },
-      { id: 'polaroid-top-text', name: 'Полароид + надпись сверху', uploads: 1, kind: 'polaroid-top-text', price: 1200, prices: { s: 1200, l: 1500 }, previewImage: 'https://optim.tildacdn.com/tild3439-3632-4163-a335-396438633733/-/resize/150x/-/format/webp/_8.jpg' },
-      { id: 'polaroid-diagonal-text', name: 'Полароид + надпись по диагонали', uploads: 1, kind: 'polaroid-diagonal-text', price: 1200, prices: { s: 1200, l: 1500 }, previewImage: 'https://optim.tildacdn.com/tild3235-3166-4362-a135-633036626632/-/format/webp/_9.jpg' },
-      { id: 'polaroid-inside-text', name: 'Полароид + текст внутри', uploads: 1, kind: 'polaroid-inside-text', price: 900, prices: { s: 900, l: 1200 }, previewImage: 'https://optim.tildacdn.com/tild3630-3666-4466-a238-396234643732/-/format/webp/_10.jpg' },
+      { id: 'simple-photo', name: 'Просто фото', uploads: 1, kind: 'simple-photo', price: 980, prices: { s: 980, l: 1300 }, previewImage: 'https://optim.tildacdn.com/tild3364-6539-4862-a532-316231366134/-/resize/150x/-/format/webp/_3.jpg' },
+      { id: 'photo-top-text', name: 'Фото + надпись сверху', uploads: 1, kind: 'photo-top-text', price: 1280, prices: { s: 1280, l: 1500 }, previewImage: 'https://optim.tildacdn.com/tild3330-6263-4561-b637-346231303632/-/format/webp/_4.jpg' },
+      { id: 'photo-bottom-text', name: 'Фото + надпись снизу', uploads: 1, kind: 'photo-bottom-text', price: 1280, prices: { s: 1280, l: 1500 }, previewImage: 'https://optim.tildacdn.com/tild3938-3263-4830-a266-396363323735/-/format/webp/_5.jpg' },
+      { id: 'photo-diagonal-text', name: 'Фото + надпись по диагонали', uploads: 1, kind: 'photo-diagonal-text', price: 1280, prices: { s: 1280, l: 1500 }, previewImage: 'https://optim.tildacdn.com/tild3833-3433-4937-a537-343831643166/-/format/webp/_6.jpg' },
+      { id: 'polaroid-photo', name: 'Полароид', uploads: 1, kind: 'polaroid-photo', price: 980, prices: { s: 980, l: 1300 }, previewImage: 'https://optim.tildacdn.com/tild6666-6336-4465-b237-366666633337/-/format/webp/_7.jpg' },
+      { id: 'polaroid-top-text', name: 'Полароид + надпись сверху', uploads: 1, kind: 'polaroid-top-text', price: 1280, prices: { s: 1280, l: 1500 }, previewImage: 'https://optim.tildacdn.com/tild3439-3632-4163-a335-396438633733/-/resize/150x/-/format/webp/_8.jpg' },
+      { id: 'polaroid-diagonal-text', name: 'Полароид + надпись по диагонали', uploads: 1, kind: 'polaroid-diagonal-text', price: 1280, prices: { s: 1280, l: 1500 }, previewImage: 'https://optim.tildacdn.com/tild3235-3166-4362-a135-633036626632/-/format/webp/_9.jpg' },
+      { id: 'polaroid-inside-text', name: 'Полароид + текст внутри', uploads: 1, kind: 'polaroid-inside-text', price: 980, prices: { s: 980, l: 1300 }, previewImage: 'https://optim.tildacdn.com/tild3630-3666-4466-a238-396234643732/-/format/webp/_10.jpg' },
     ],
     customTemplates: [
       { id: 'custom-7', name: 'Рисунок', note: 'Разработка дизайнером', price: 1500, previewImage: 'https://www.dropbox.com/scl/fi/ljr4ei8s5mz8kkq6p4kd5/07-result.png?rlkey=etmemm6aabr8ewdztw0vs4zdz&st=41woe88s&raw=1', cardImage: 'https://optim.tildacdn.com/tild6335-3038-4635-a131-383363383236/-/resize/306x/-/format/webp/_7.png', photoDefaults: { exportX: 445.7, exportY: 470, width: 106.6, height: 164.6, scale: 0.748 }, extraImages: [{ name: 'customExtra1', src: 'https://www.dropbox.com/scl/fi/b82czot6xamij60wahtjo/07-ishod.png?rlkey=9hc1zswi9i5bc4aa8rajn8rdl&st=98vp5hbi&raw=1', exportX: 35.6, exportY: 122.2, width: 105.9, height: 160.6, scale: 0.643 }] },
-      { id: 'custom-1', name: 'Парный полароид', note: 'Разработка дизайнером', price: 1300, previewImage: 'https://www.dropbox.com/scl/fo/32sdavmje7anx9fg8h13a/AJvA4PbLVJpbcO4OhhvXLUQ/%D0%BF%D0%BE%D0%BB%D0%B0%D1%80%D0%BE%D0%B8%D0%B4%20%D0%B4%D0%B2%D0%BE%D0%B9%D0%BD%D0%BE%D0%B9%20%D0%BD%D0%BE%D0%B2%D1%8B%D0%B9.png?rlkey=hko8iad8atbm6bukwynhqlvps&st=8ydu7ovl&raw=1', cardImage: 'https://optim.tildacdn.com/tild3261-3761-4434-b836-346635626363/-/format/webp/_01.jpg', photoDefaults: { exportX: 407, exportY: 481.1, width: 192.1, height: 128.8, scale: 2.183 } },
-      { id: 'custom-2', name: 'Силуэт', note: 'Разработка дизайнером', price: 1550, previewImage: 'https://www.dropbox.com/scl/fo/32sdavmje7anx9fg8h13a/APT4Bvd9uJzDm2uWBDiqHmk/002.png?rlkey=hko8iad8atbm6bukwynhqlvps&st=3sdpmecg&raw=1', cardImage: 'https://optim.tildacdn.com/tild6666-3465-4236-a566-356535643237/-/resize/212x/-/format/webp/_02.jpg', photoDefaults: { exportX: 431, exportY: 479.7, width: 155.4, height: 171.2, scale: 1.766 } },
-      { id: 'custom-3', name: 'Голова в колпаке + фраза', note: 'Разработка дизайнером', price: 1350, previewImage: 'https://www.dropbox.com/scl/fo/32sdavmje7anx9fg8h13a/AKzgf8MyTITN8tOBkPRvLEk/003.png?rlkey=hko8iad8atbm6bukwynhqlvps&st=1qcfqkq1&raw=1', cardImage: 'https://optim.tildacdn.com/tild3466-6164-4939-b637-336439333361/-/format/webp/_03.jpg', photoDefaults: { exportX: 427.3, exportY: 456, width: 192.3, height: 206, scale: 2.185 } },
-      { id: 'custom-4', name: 'Фраза из фото', note: 'Разработка дизайнером', price: 1350, previewImage: 'https://www.dropbox.com/scl/fo/32sdavmje7anx9fg8h13a/AH_cKJkhh_G52dcEwLxF2PA/004.png?rlkey=hko8iad8atbm6bukwynhqlvps&st=k7ryeajv&raw=1', cardImage: 'https://optim.tildacdn.com/tild6164-6438-4030-a133-663935663864/-/format/webp/_04.jpg', photoDefaults: { exportX: 373.5, exportY: 481.7, width: 275.5, height: 85.6, scale: 3.131 } },
-      { id: 'custom-5', name: 'Коллаж из 3-х фото', note: 'Разработка дизайнером', price: 1700, previewImage: 'https://www.dropbox.com/scl/fo/32sdavmje7anx9fg8h13a/ALmdTR-0Axc6r3oD1b9iMt8/5.%20%D0%9A%D0%BE%D0%BB%D0%BB%D0%B0%D0%B6%20%D0%B8%D0%B7%203-%D1%85%20%D1%84%D0%BE%D1%82%D0%BE.png?rlkey=hko8iad8atbm6bukwynhqlvps&st=eviyphsl&raw=1', cardImage: 'https://optim.tildacdn.com/tild6331-3830-4634-b133-316439346331/-/format/webp/_05.jpg', photoDefaults: { exportX: 373.2, exportY: 480.2, width: 262.9, height: 102.2, scale: 2.987 } },
-      { id: 'custom-6', name: 'Коллаж из 4-х фото', note: 'Разработка дизайнером', price: 2100, previewImage: 'https://www.dropbox.com/scl/fo/32sdavmje7anx9fg8h13a/ADU0wBCowM9BTqActIBrbzk/006.png?rlkey=hko8iad8atbm6bukwynhqlvps&st=fk9c1ez0&raw=1', cardImage: 'https://optim.tildacdn.com/tild6463-3736-4562-b938-343634343333/-/format/webp/_06.jpg', photoDefaults: { exportX: 423.2, exportY: 480, width: 168, height: 227.2, scale: 2.058 } },
+      { id: 'custom-1', name: 'Парный полароид', note: 'Разработка дизайнером', price: 1380, previewImage: 'https://www.dropbox.com/scl/fo/32sdavmje7anx9fg8h13a/AJvA4PbLVJpbcO4OhhvXLUQ/%D0%BF%D0%BE%D0%BB%D0%B0%D1%80%D0%BE%D0%B8%D0%B4%20%D0%B4%D0%B2%D0%BE%D0%B9%D0%BD%D0%BE%D0%B9%20%D0%BD%D0%BE%D0%B2%D1%8B%D0%B9.png?rlkey=hko8iad8atbm6bukwynhqlvps&st=8ydu7ovl&raw=1', cardImage: 'https://optim.tildacdn.com/tild3261-3761-4434-b836-346635626363/-/format/webp/_01.jpg', photoDefaults: { exportX: 407, exportY: 481.1, width: 192.1, height: 128.8, scale: 2.183 } },
+      { id: 'custom-2', name: 'Силуэт', note: 'Разработка дизайнером', price: 1680, previewImage: 'https://www.dropbox.com/scl/fo/32sdavmje7anx9fg8h13a/APT4Bvd9uJzDm2uWBDiqHmk/002.png?rlkey=hko8iad8atbm6bukwynhqlvps&st=3sdpmecg&raw=1', cardImage: 'https://optim.tildacdn.com/tild6666-3465-4236-a566-356535643237/-/resize/212x/-/format/webp/_02.jpg', photoDefaults: { exportX: 431, exportY: 479.7, width: 155.4, height: 171.2, scale: 1.766 } },
+      { id: 'custom-3', name: 'Голова в колпаке + фраза', note: 'Разработка дизайнером', price: 1450, previewImage: 'https://www.dropbox.com/scl/fo/32sdavmje7anx9fg8h13a/AKzgf8MyTITN8tOBkPRvLEk/003.png?rlkey=hko8iad8atbm6bukwynhqlvps&st=1qcfqkq1&raw=1', cardImage: 'https://optim.tildacdn.com/tild3466-6164-4939-b637-336439333361/-/format/webp/_03.jpg', photoDefaults: { exportX: 427.3, exportY: 456, width: 192.3, height: 206, scale: 2.185 } },
+      { id: 'custom-4', name: 'Фраза из фото PAPA', note: 'Разработка дизайнером', price: 1550, previewImage: 'https://www.dropbox.com/scl/fo/32sdavmje7anx9fg8h13a/AH_cKJkhh_G52dcEwLxF2PA/004.png?rlkey=hko8iad8atbm6bukwynhqlvps&st=k7ryeajv&raw=1', cardImage: 'https://optim.tildacdn.com/tild6164-6438-4030-a133-663935663864/-/format/webp/_04.jpg', photoDefaults: { exportX: 373.5, exportY: 481.7, width: 275.5, height: 85.6, scale: 3.131 } },
+      { id: 'custom-8', name: 'Фраза из фото MAMA', note: 'Разработка дизайнером', price: 1550, previewImage: 'https://www.dropbox.com/scl/fi/6b6lm0m52b54vf1ifjim4/IMG_5988.PNG?rlkey=v48qwmrrb9zr68ur5cqnnuxou&st=48edzqvd&raw=1', cardImage: 'https://optim.tildacdn.com/tila6633-6638-4361-b463-656336646562/-/format/webp/individulny_8.png', photoDefaults: { exportX: 373.5, exportY: 481.7, width: 275.5, height: 85.6, scale: 3.131 } },
+      { id: 'custom-5', name: 'Коллаж из 3-х фото', note: 'Разработка дизайнером', price: 1780, previewImage: 'https://www.dropbox.com/scl/fo/32sdavmje7anx9fg8h13a/ALmdTR-0Axc6r3oD1b9iMt8/5.%20%D0%9A%D0%BE%D0%BB%D0%BB%D0%B0%D0%B6%20%D0%B8%D0%B7%203-%D1%85%20%D1%84%D0%BE%D1%82%D0%BE.png?rlkey=hko8iad8atbm6bukwynhqlvps&st=eviyphsl&raw=1', cardImage: 'https://optim.tildacdn.com/tild6331-3830-4634-b133-316439346331/-/format/webp/_05.jpg', photoDefaults: { exportX: 373.2, exportY: 480.2, width: 262.9, height: 102.2, scale: 2.987 } },
+      { id: 'custom-6', name: 'Коллаж из 4-х фото', note: 'Разработка дизайнером', price: 2180, previewImage: 'https://www.dropbox.com/scl/fo/32sdavmje7anx9fg8h13a/ADU0wBCowM9BTqActIBrbzk/006.png?rlkey=hko8iad8atbm6bukwynhqlvps&st=fk9c1ez0&raw=1', cardImage: 'https://optim.tildacdn.com/tild6463-3736-4562-b938-343634343333/-/format/webp/_06.jpg', photoDefaults: { exportX: 423.2, exportY: 480, width: 168, height: 227.2, scale: 2.058 } },
     ],
     printColors: printColorOptions.map(({ value }) => value),
     printColorLabels,
@@ -833,7 +834,7 @@ const baseProducts = [
     const printSizes = Array.isArray(defaultTemplateTextConfig.printSizes) ? defaultTemplateTextConfig.printSizes : [];
     const fonts = Array.isArray(defaultTemplateTextConfig.fonts) ? defaultTemplateTextConfig.fonts : [];
     const extras = [
-      { id: 'hand-drawn', name: 'Рисованные элементы на фотографии', description: 'К любому шаблону с фотографией вы можете добавить рисованные элементы. Макет будет выслан после работы дизайнера.', price: 300, icon: 'https://optim.tildacdn.com/tild3861-6631-4133-b232-363732663865/-/resize/200x/-/format/webp/photo.jpg' },
+      { id: 'hand-drawn', name: 'Рисованные элементы на фотографии', description: 'К любому шаблону с фотографией вы можете добавить рисованные элементы. Макет будет выслан после работы дизайнера.', price: 350, icon: 'https://optim.tildacdn.com/tild3861-6631-4133-b232-363732663865/-/resize/200x/-/format/webp/photo.jpg' },
       { id: 'polaroid-photo', name: 'Полароид', description: 'Ваши фотографии будут напечатаны на оригинальных картриджах Fujifilm', price: 390, icon: 'https://optim.tildacdn.com/tild3538-3033-4136-b039-623661366362/-/format/webp/photo.jpg' },
       { id: 'cassette', name: 'Аудио открытка «кассета»', description: 'На кассету можно записать своё 60-секундное послание, которое получатель сможет прослушать.', price: 590, icon: 'https://optim.tildacdn.com/tild6266-3536-4232-a338-306561316665/-/format/webp/photo.jpg' },
     ];
@@ -911,7 +912,7 @@ const baseProducts = [
     // =====================================================================
     // KONVA ENGINE (inlined) — declarative templates, layout, renderers
     // =====================================================================
-    const KONVA_DEV_MODE = false;
+    const KONVA_DEV_MODE = true;
 
     const KONVA_EXPORT_W = 1000;
     const KONVA_EXPORT_H = 1250;
@@ -2683,6 +2684,10 @@ const baseProducts = [
     function isFontLowercaseOnly(fontId = state.font, template = getSelectedTemplate()) {
       return Boolean(getSelectedFontOption(fontId, template)?.lowercaseOnly);
     }
+    function filterFontTextInput(value, fontId = state.font, template = getSelectedTemplate()) {
+      const text = String(value || '');
+      return isFontLatinOnly(fontId, template) ? text.replace(/[\u0400-\u04FF]/g, '') : text;
+    }
     function textContainsCyrillic(value = state.textValue) {
       return /[\u0400-\u04FF]/.test(String(value || ''));
     }
@@ -3071,6 +3076,9 @@ const baseProducts = [
       if (availableFonts.length && !availableFonts.some((fontOption) => fontOption.id === state.font)) {
         state.font = getDefaultFontName(template);
       }
+      if (isFontLatinOnly(state.font, template) && textContainsCyrillic(state.textValue)) {
+        state.font = availableFonts.find((fontOption) => !fontOption.latinOnly)?.id || state.font;
+      }
       if (!isEmbroideryAvailable()) {
         state.isEmbroideryText = false;
       }
@@ -3093,7 +3101,7 @@ const baseProducts = [
     }, 0);
     const getProductionTotal = () => {
       const productionMode = getProductionMode();
-      return productionMode === 'superfast' ? 800 : productionMode === 'fast' ? 500 : 0;
+      return productionMode === 'superfast' ? 980 : productionMode === 'fast' ? 580 : 0;
     };
     const getEmbroiderySymbolsCount = () => getConfiguredTextValue().replace(/\s/g, '').length;
     const isEmbroideryAvailable = (template = getSelectedTemplate()) => templateSupportsText(template) && getTemplateTextConfig(template)?.supportsEmbroidery !== false;
@@ -4051,8 +4059,25 @@ const baseProducts = [
       const minHeight = Math.ceil(lineHeight + verticalInsets);
       const maxHeight = Math.ceil((lineHeight * Math.max(1, Number(rules.maxLines) || 1)) + verticalInsets);
 
-      textInput.style.height = 'auto';
-      textInput.style.height = `${Math.min(maxHeight, Math.max(minHeight, textInput.scrollHeight))}px`;
+      // Measure outside the layout: collapsing a focused textarea makes mobile
+      // browsers move the viewport to keep the caret visible.
+      const measure = textInput.cloneNode(false);
+      measure.removeAttribute('id');
+      measure.removeAttribute('name');
+      measure.setAttribute('aria-hidden', 'true');
+      measure.tabIndex = -1;
+      for (const property of styles) measure.style.setProperty(property, styles.getPropertyValue(property));
+      Object.assign(measure.style, {
+        position: 'fixed', top: '0', left: '0', visibility: 'hidden',
+        pointerEvents: 'none', width: `${textInput.getBoundingClientRect().width}px`,
+        height: '0', minHeight: '0', maxHeight: 'none', overflow: 'hidden',
+      });
+      measure.value = textInput.value;
+      document.body.appendChild(measure);
+      const measuredHeight = measure.scrollHeight + borderTop + borderBottom;
+      measure.remove();
+      const height = `${Math.min(maxHeight, Math.max(minHeight, measuredHeight))}px`;
+      if (textInput.style.height !== height) textInput.style.height = height;
     }
     function getPreviewTextLetterSpacingValue(template = getSelectedTemplate(), printSize = getSelectedPrintSize(undefined, template), fontSize = 16) {
       const rules = getPreviewTextRules(template, printSize);
@@ -6514,7 +6539,7 @@ const baseProducts = [
               <div class="custom-upload-shell">
                 <div class="custom-upload-head">
                   <div>
-                    <div class="subtext">Загрузите до ${MAX_CUSTOM_UPLOADS} фотографий. Мы передадим их дизайнеру для создания индивидуального дизайна. Для данных шаблонов визуализация изделия недоступна - дизайнер индивидуально проработает ваш дизайн и пришлет на согласование.</div>
+                    <div class="subtext">Загрузите Ваши фотографии. Мы передадим их дизайнеру для создания индивидуального дизайна. Для данных шаблонов визуализация изделия недоступна - дизайнер индивидуально проработает ваш дизайн и пришлет на согласование.</div>
                   </div>
                   <div class="custom-upload-count">${state.uploads.length}/${MAX_CUSTOM_UPLOADS}</div>
                 </div>
@@ -6662,11 +6687,25 @@ const baseProducts = [
 
             <div>
               <div class="field-title">Выберите шрифт</div>
+              <style>
+                #stepContent .font-choice-btn:disabled {
+                  background: #f3f4f6 !important;
+                  border-color: #e5e7eb !important;
+                  color: #9ca3af !important;
+                  opacity: .55;
+                  cursor: not-allowed;
+                  box-shadow: none !important;
+                }
+                #stepContent .font-choice-btn:disabled .font-option-title,
+                #stepContent .font-choice-btn:disabled .font-option-info {
+                  color: #9ca3af !important;
+                }
+              </style>
               <div class="font-choice-grid">
                 ${availableFonts.map((fontOption) => `
-                  <button class="font-btn font-option-btn font-choice-btn ${state.font === fontOption.id ? 'active' : ''}" data-font-value="${escapeAttr(fontOption.id)}" style="font-family:${escapeAttr(getFontFamily(fontOption.id))};" type="button">
+                  <button class="font-btn font-option-btn font-choice-btn ${state.font === fontOption.id ? 'active' : ''}" data-font-value="${escapeAttr(fontOption.id)}" ${fontOption.latinOnly && textContainsCyrillic(state.textValue) ? 'disabled aria-disabled="true" title="Этот шрифт недоступен для русского текста"' : ''} style="font-family:${escapeAttr(getFontFamily(fontOption.id))};" type="button">
                     <span class="font-option-head">
-                      <span class="font-option-title">${fontOption.label}</span>
+                      <span class="font-option-title" style="white-space:nowrap;min-width:0;overflow:hidden;text-overflow:ellipsis;${fontOption.latinOnly ? 'font-family:system-ui,sans-serif;' : ''}">${escapeHtml(fontOption.label)}</span>
                       ${fontOption.note ? `
                         <span class="font-option-info" data-font-note-trigger title="${escapeAttr(fontOption.note)}" aria-label="${escapeAttr(fontOption.note)}">
                           ?
@@ -6677,7 +6716,7 @@ const baseProducts = [
                   </button>
                 `).join('')}
               </div>
-              <div class="font-warning" id="fontWarning" ${(isFontLatinOnly(state.font) && textContainsCyrillic(state.textValue)) ? '' : 'hidden'}>Этот шрифт работает только с латиницей.</div>
+              <div class="font-warning" id="fontWarning" ${isFontLatinOnly(state.font) ? '' : 'hidden'}>Этот шрифт работает только с латиницей.</div>
             </div>
 
             <div>
@@ -6784,7 +6823,7 @@ const baseProducts = [
                     <div class="production-option-title">Ускоренный</div>
                     <div class="subtext">Срок изготовления 2-3 дня</div>
                   </div>
-                  <div class="production-card-price production-option-price">+ ${formatPrice(500)}</div>
+                  <div class="production-card-price production-option-price">+ ${formatPrice(580)}</div>
                 </button>
 
                 <button class="toggle-card production-option-card ${productionMode === 'superfast' ? 'active' : ''}" data-production-mode="superfast" type="button" aria-pressed="${productionMode === 'superfast'}">
@@ -6792,7 +6831,7 @@ const baseProducts = [
                     <div class="production-option-title">За 24 часа</div>
                     <div class="subtext">Доступно при оформлении заказа ежедневно до 17:00 по московскому времени (кроме субботы)</div>
                   </div>
-                  <div class="production-card-price production-option-price">+ ${formatPrice(800)}</div>
+                  <div class="production-card-price production-option-price">+ ${formatPrice(980)}</div>
                 </button>
               </div>
               <div class="production-comment">
@@ -7250,6 +7289,9 @@ const baseProducts = [
             const previousValue = String(state.textValue || '');
             const lowercaseOnly = isFontLowercaseOnly(state.font, template);
             let rawValue = isSimplePhotoTemplate(template) ? '' : String(e.target.value);
+            const originalCursorPos = e.target.selectionStart;
+            const filteredCursorPos = filterFontTextInput(rawValue.slice(0, originalCursorPos), state.font, template).length;
+            rawValue = filterFontTextInput(rawValue, state.font, template);
             if (lowercaseOnly) rawValue = rawValue.toLowerCase();
             const newLines = rawValue.replace(/\r\n?/g, '\n').split('\n');
             const lineExceeded = newLines.some((line) => line.length > maxChars);
@@ -7262,7 +7304,7 @@ const baseProducts = [
               return;
             }
             if (e.target.value !== rawValue) {
-              const cursorPos = e.target.selectionStart;
+              const cursorPos = filteredCursorPos;
               e.target.value = rawValue;
               e.target.setSelectionRange(cursorPos, cursorPos);
             }
@@ -7426,6 +7468,7 @@ const baseProducts = [
         });
         container.querySelectorAll('[data-font-value]').forEach((btn) => {
           btn.onclick = async () => {
+            if (isFontLatinOnly(btn.dataset.fontValue, selectedTemplate) && textContainsCyrillic(state.textValue)) return;
             // Защита от сброса зума/позиции (см. textInput.oninput выше).
             const savedCropZoom = state.cropZoom;
             const savedCropPosition = { ...state.cropPosition };
@@ -9385,6 +9428,11 @@ function renderLeftSummary() {
       });
       container.querySelectorAll('[data-font-value]').forEach((btn) => {
         btn.classList.toggle('active', (availableFonts.some((fontOption) => fontOption.id === btn.dataset.fontValue) ? btn.dataset.fontValue : availableFonts[0]?.id) === state.font);
+        const blocked = isFontLatinOnly(btn.dataset.fontValue, selectedTemplate) && textContainsCyrillic(state.textValue);
+        btn.disabled = blocked;
+        btn.setAttribute('aria-disabled', String(blocked));
+        if (blocked) btn.title = 'Этот шрифт недоступен для русского текста';
+        else btn.removeAttribute('title');
       });
       container.querySelectorAll('[data-print-size]').forEach((btn) => {
         btn.classList.toggle('active', btn.dataset.printSize === state.printSize);
@@ -9399,7 +9447,7 @@ function renderLeftSummary() {
 
       const fontWarning = container.querySelector('#fontWarning');
       if (fontWarning) {
-        const shouldWarn = isFontLatinOnly(state.font, selectedTemplate) && textContainsCyrillic(state.textValue);
+        const shouldWarn = isFontLatinOnly(state.font, selectedTemplate);
         fontWarning.hidden = !shouldWarn;
       }
       const fontMeta = container.querySelector('#fontMeta');
